@@ -12,6 +12,24 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     YOUR CODE HERE
     """
+    print("weights:", weights)
+    # print("limit:", limit)
+    # check if pair exist while looping
+    for i,w in enumerate(weights):
+        # Retrive using the key of value pair
+        print("i:", i)
+        print("w", w)
+        if hash_table_retrieve(ht, w) != None:
+            #if exists return key value pair
+            f = hash_table_retrieve(ht, w)
+            #Return with higher value index if the zeroth index
+            # print(f, i)
+            if f > i:
+                return (f, i)
+            else:
+                return(i, f)
+        #Insert into hash table
+        hash_table_insert(ht, limit - w, i)
 
     return None
 
