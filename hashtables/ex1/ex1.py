@@ -21,7 +21,7 @@ def get_indices_of_item_weights(weights, length, limit):
             #if exists return key value pair
             f = hash_table_retrieve(ht, w)
             #Return with higher value index if the zeroth index
-            # print(f, i)
+            print(f, i)
             if f > i:
                 return (f, i)
             else:
