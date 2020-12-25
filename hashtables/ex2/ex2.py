@@ -20,4 +20,17 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
 
-    pass
+    for i in tickets:
+        # print(i.source, i.destination)
+        hash_table_insert(hashtable, str(i.source), str(i.destination))
+    #Flight list
+    flights = []
+    #origin
+    dest = hash_table_retrieve(hashtable, 'NONE')
+    # Loop till you hit none
+    while dest != 'NONE':
+        flights.append(dest)
+        dest = hash_table_retrieve(hashtable, dest)
+
+    return flights
+    
